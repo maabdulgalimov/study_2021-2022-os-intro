@@ -99,13 +99,14 @@ header-includes:
 
 # Выполнение лабораторной работы
 
-## 1. Создал учетную запись и заполнил основные данные(рис. [-@fig:001], [-@fig:002]):
+## 1. Создал учетную запись и заполнил основные данные
+(рис. [-@fig:001;-@fig:002]):
 
-![1 Создание учетной записи](./image/Screenshot_2.png) {#fig:001; width:70%}
+![Создание учетной записи](./image/Screenshot_2.png){ #fig:001 width=70% }
 
-![2 ввод основной информации](./image/2.png) {#fig:002; width:70%}
+![Ввод основной информации](./image/2.png){ #fig:002 width=70% }
 
-## 2. Установил git-flow в Fedora Linux:
+## 2. Установил git-flow в Fedora Linux(рис. [-@fig:003], [-@fig:004]):
 Команды:
 ```
 cd /tmp
@@ -114,12 +115,11 @@ chmod +x gitflow-installer.sh
 sudo ./gitflow-installer.sh install stable
 ```
 
-![](./image/3.png)
-**Рис. 3 Установка git-flow в Fedora Linux**
-![](./image/4.png)
-**Рис. 4 Установка git-flow в Fedora Linux**
+![Установка git-flow в Fedora Linux](./image/3.png){#fig:003 width=70%}
 
-## 3. Провел базовую настройку Git:
+![Установка git-flow в Fedora Linux](./image/4.png){#fig:004 width=70%}
+
+## 3. Провел базовую настройку Git(рис. [-@fig:005]):
 Команды:
 ```
 git config --global user.name "Name Surname"
@@ -127,49 +127,42 @@ git config --global user.email "work@mail"
 git config --global core.quotepath false
 ```
 
-![](./image/5.png)
-**Рис. 5 Проведение базовой настройки Git**
+![Проведение базовой настройки Git](./image/5.png){#fig:005 width=70%}
 
-## 4. Создал ключи SSH и PGP:
+## 4. Создал ключи SSH и PGP(рис. [-@fig:006], [-@fig:007]):
 Команды:
 ```
 ssh-keygen -t rsa -b 4096
 ssh-keygen -t ed25519
 ```
 
-![](./image/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9%207.png)
-**Рис. 6 Генерация SSH**
+![Генерация SSH](./image/6.1.png){#fig:006 width=70%}
 
-![](./image/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9%208.png)
-**Рис. 7 Генерация PGP**
+![Генерация PGP](./image/6.2.png){#fig:007 width=70%}
 
-## 5. Добавление PGP в GitHub:
+## 5. Добавление PGP в GitHub(рис. [-@fig:008], [-@fig:009]):
 Команды:
 ```
 gpg --list-secret-keys --keyid-format LONG
 gpg --armor --export <PGP Fingerprint> | xclip
 ```
 
-![](./image/9.png)
-**Рис. 8 Добавление PGP в GitHub**
+![Добавление PGP в GitHub](./image/9.png){#fig:008 width=70%}
 
-![](./image/10.png)
-**Рис. 9 Добавление PGP в GitHub**
+![Добавление PGP в GitHub](./image/10.png){#fig:009 width=70%}
 
-## 6. Настроил автоматические подписи для комитов Git:
+## 6. Настроил автоматические подписи для комитов Git(рис. [-@fig:010], [-@fig:011]):
 Команды:
 ```
 git config --global user.signingkey <PGP Fingerprint>
 git config --global commit.gpgsign true
 git config --global gpg.program $(which gpg2)
 ```
-![](./image/11%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%B0%D0%B2%D1%82%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B5%D0%B9.png)
-**Рис. 10 Настроил автоматические подписи для комитов Git**
+![Настроил автоматические подписи для коммитов Git](./image/11.png){#fig:010 width=70%}
 
-![](./image/12%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20gh.png)
-**Рис. 11 Настроил gh**
+![Настроил gh](./image/12.png){ #fig:011 width=70% }
 
-## 7. Создание репозитория курса на основе шаблона:
+## 7. Создание репозитория курса на основе шаблона(рис. [-@fig:012]):
 Команды:
 ```
 mkdir -p ~/work/study/2021-2022/"Операционные системы"
@@ -178,10 +171,9 @@ gh repo create study_2021-2022_os-intro--template=yamadharma/course-directory-st
 git clone --recursivegit@github.com:<owner>/study_2021-2022_os-intro.git os-intro
 ```
 
-![](./image/13.png)
-**Рис. 12 Создание репозитория на основе шаблона**
+![Создание репозитория на основе шаблона](./image/13.png){#fig:012 width=70%}
 
-## 8. Настроил каталог курса и отправил на сервер:
+## 8. Настроил каталог курса и отправил на сервер(рис. [-@fig:013]):
 Команды: 
 ```
 cd ~/work/study/2021-2022/"Операционные системы"/os-intro
@@ -192,8 +184,7 @@ git commit -am 'feat(main): make course structure'
 git push
 ```
 
-![](./image/14.png)
-**Рис. 13 Настройка каталога курса**
+![Настройка каталога курса](./image/14.png){#fig:013 width=70%}
 
 ## Контрольные вопросы:
 
